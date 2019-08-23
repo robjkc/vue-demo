@@ -10,10 +10,16 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component({})
 export default class Counter extends Vue {
-  @Prop()
   counter!: number;
 
+  data() {
+    return {
+      counter: this.counter
+    };
+  }
+
   mounted() {
+    console.log("Counter mounted!");
     this.counter = 0;
   }
 
